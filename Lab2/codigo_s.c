@@ -1,6 +1,8 @@
-/*
-Programa auxiliar para gerar dois vetores de floats e calcular o produto interno
-*/
+/* Helena Marques Batista - 122071866 */
+/* Disciplina: Programacao Concorrente */
+/* Profa.: Silvana Rossetto */
+/* Laboratorio: 2 */
+/* Programa auxiliar para gerar dois vetores de floats e calcular o produto interno */
 
 #include <stdio.h>
 #include <stdlib.h>
