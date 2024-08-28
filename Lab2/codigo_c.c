@@ -5,7 +5,7 @@
 /* Codigo: Divide vetor entre threads, calcula produto interno e variacao relativa */
 
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <pthread.h>
 
 //cria a estrutura de dados para armazenar os argumentos da thread
@@ -21,8 +21,8 @@ typedef struct {
 } t_Ret;
 
 // Funcao que calcula a variacao relativa do resultado
-void CalculaVariacaoRelativa(double produto_interno_thread, double produto_interno_arquivo) {
-    float variacao_relativa = (float) ((produto_interno_thread - produto_interno_arquivo) / produto_interno_arquivo);
+void VariacaoRelativa(double pi_thread, double pi_arquivo) {
+    float variacao_relativa = (float) ((pi_thread - pi_arquivo) / pi_arquivo);
     printf("Variacao relativa: %10f\n", variacao_relativa);
 }
 
@@ -152,7 +152,7 @@ int main(int argc, char* argv[]) {
     }
 
     // calcula a variacao relativa
-    CalculaVariacaoRelativa(pi_thread, pi_arquivo);
+    VariacaoRelativa(pi_thread, pi_arquivo);
 
     // limpa a memoria alocada para os vetores
     free(vetor1);

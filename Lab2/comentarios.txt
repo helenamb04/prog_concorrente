@@ -1,0 +1,9 @@
+Helena Marques Batista - 122071866
+Disciplina: Programacao Concorrente
+Profa.: Silvana Rossetto
+Laboratorio: 2
+Comentários
+
+Só começou a aparecer algum número diferente de 0, mesmo utilizando float e várias casas decimais, com um número bem grande de elementos nos vetores.
+Na casa dos 10000000, quanto mais threads coloquei, menor ficava a variação.
+
