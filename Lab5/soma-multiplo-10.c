@@ -18,7 +18,7 @@ void *ExecutaTarefa (void *arg) {
         pthread_mutex_lock(&mutex);
 
         // pausa se o valor atual for múltiplo de 10 e não foi impresso ainda
-        if (soma % 10 == 0 && soma > 0 && !impresso) {
+        while (soma % 10 == 0 && soma > 0 && !impresso) {
             pthread_cond_wait(&cond, &mutex); // espera o sinal da thread extra
         }
 
@@ -45,7 +45,7 @@ void *extra (void *args) {
     while (!terminou) { // executa enquanto a soma não atingir o limite
         pthread_mutex_lock(&mutex);
 
-        if (soma % 10 == 0 && soma > 0 && !impresso) {
+        if (soma % 10 == 0 && !impresso && soma > 0) {
             printf("soma = %ld\n", soma);
             impresso = 1; // flag indicando que imprimiu
             pthread_cond_signal(&cond); // manda o sinal para a thread principal
